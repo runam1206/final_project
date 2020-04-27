@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">-->
+    <style>
+         body,a{
+            font-family: 'Open Sans', sans-serif;
+            color:#46211A;
+            background-color: #f7e0dc;
+        }
+
+        h1,h2 {
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .button{
+            background-color: #a43820; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        
+        .button:hover{
+            background-color: #ba5536;
+        }
+        .back,.totald,.totalt{
+            padding: 10px;
+            padding-bottom: 50px;
+        }
+        .all_buttons{
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:nth-child(odd){
+            background-color: #deb0a2; 
+
+        }
+        tr:hover {background-color: #ddd;}
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #693d3d;
+            color: white;
+        }
+
+        .container{
+            padding-top:40px;
+            text-align: center;
+        }
+        
+    </style>
+    <title>US Data</title>
+</head>
+<header>
+    <h1>US Data</h1>
+</header>
+<body>
+    <div class='all_buttons'>
+        <div class='back'>
+            <a href = '/'><input type="button" class='button' value="Return to Home"></a>
+        </div>
+        <div class='totald'>
+            <a href = '/us/totaldeaths'><input type="button"  class='button' value="Total Deaths"></a>
+        </div>
+        <div class='totalt'>
+            <a href = '/us/totaltests'><input type="button" class='button' value="Total Tested"></a>
+        </div>
+    </div>
+    <div class='map_plot'>
+        <h2>Total Cases in U.S</h2>
+        {{plot_div | safe}}
+    </div>
+    <div class="pie_plot">
+        {{plot_div_pie | safe}}
+    </div><br><br><br><br>
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Total Cases</th>
+            <th>Total Deaths</th>
+            <th>Total Tests</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<fotter>
+    <div class="container">
+        <span class="copyright">Copyright &copy; 2020 - Designed and Coded by Runa Morioka</span>
+    </div>
+</fotter>
+</html>

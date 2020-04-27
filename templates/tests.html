@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">-->
+    <style>
+         body,a{
+            font-family: 'Open Sans', sans-serif;
+            color:#46211A;
+            background-color: #f7e0dc;
+        }
+
+        h1,h2 {
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .button{
+            background-color: #a43820; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        
+        .button:hover{
+            background-color: #ba5536;
+        }
+        .back,.totald,.usdata{
+            padding: 10px;
+            padding-bottom: 50px;
+        }
+        .all_buttons{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            padding-top:40px;
+            text-align: center;
+        }
+    </style>
+    <title>US Statistic</title>
+
+</head>
+<header>
+   <h1>Total Tests in U.S</h1>
+</header>
+<body>
+    <div class='all_buttons'>
+        <div class='back'>
+            <a href = '/'><input type="button" class='button' value="Return to Home"></a>
+        </div>
+        <div class='totald'>
+            <a href = '/us/totaldeaths'><input type="button"  class='button' value="Total Deaths"></a>
+        </div>
+        <div class='usdata'>
+            <a href = '/us'><input type="button" class='button' value="Total Cases"></a>
+        </div>
+    </div>
+    <div class='map_plot'>
+        {{plot_div | safe}}
+    </div>
+    <div class="pie_plot">
+        {{plot_div_pie | safe}}
+    </div>
+</body>
+<fotter>
+    <div class="container">
+        <span class="copyright">Copyright &copy; 2020 - Designed and Coded by Runa Morioka</span>
+    </div>
+</fotter>
+</html>

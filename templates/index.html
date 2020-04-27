@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,a{
+            font-family: 'Open Sans', sans-serif;
+            color:#46211A;
+            background-color: #f7e0dc;
+        }
+
+        header{
+            background: 
+            linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+            ),
+            url('../static/header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+        }
+        .page_header {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        a:hover{
+            color: #A43820;
+        }
+
+        a {
+            font-weight: bold;
+            text-decoration: none; 
+        }
+        
+        .intro{
+            
+            padding-top: 10px;
+            padding-left:30px;
+            padding-right:30px;  
+            
+        }
+        .button{
+            background-color: #a43820; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .button:hover{
+            background-color: #ba5536;
+        }
+
+        .button_world, .button_us,.button_about{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:20px;
+        }
+        .container{
+            padding-top:40px;
+            text-align: center;
+        }
+        
+    </style>
+    <title>COVID-19 Database</title>
+    
+</head> 
+<header>
+    <div class='page_header'>
+        <h1>COVDI-19 Database</h1>   
+        <p>World and US Data</p>
+    </div>
+    
+</header>
+<body>
+    <div class='intro'>
+        <p>
+            On Dec 31 2019, Wuhan, China reported to CDC a cluster of cases of pneumonia in China. A novel type of cornovirus virus was soon identified. In winter of 2020, 
+            the virus outbreak went off in China and millions of people were suffering. After months of medical professionals and people fighting against the virus, 
+            the spreading in China ceased. However, the virus started spreading across the world, causing a global pandemic. Right now, the United States became one of the most serious regions
+            affected by the coronavirus; people are losing jobs, schools are shutting down, cities that were full of lights and crowds are now fall silent. This database is created to help 
+            provide better visualization of the coronavirus cases around the world as well as in the United States. The data came from reliable sources. For details, click <a href='/about'>Here</a>. 
+        </p>
+    </div>
+    <div class="button_world">
+        <a href = '/world'><input type="button" class="button" value="World Data"></a>
+    </div>
+    <div class="button_us">
+        <a href = '/us'><input type="button" class="button" value="US Data"></a>
+    </div>
+    <div class="button_about">
+        <a href = '/about'><input type="button" class="button" value="About"></a>
+    </div>
+</body>
+<fotter>
+    <div class="container">
+        <span class="copyright">Copyright &copy; 2020 - Designed and Coded by Runa Morioka</span>
+    </div>
+</fotter>
+</html>

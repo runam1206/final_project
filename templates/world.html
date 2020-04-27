@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,a{
+            font-family: 'Open Sans', sans-serif;
+            color:#46211A;
+            background-color: #f7e0dc;
+        }
+
+        h1 {
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .button{
+            background-color: #a43820; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        
+        .button:hover{
+            background-color: #ba5536;
+        }
+        .back{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:20px;
+            padding-bottom: 40px;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:nth-child(odd){
+            background-color: #deb0a2; 
+
+        }
+        tr:hover {background-color: #ddd;}
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #693d3d;
+            color: white;
+        }
+        .container{
+            padding-top:40px;
+            text-align: center;
+        }
+    </style>
+    <title>World Data</title>
+
+</head>
+<header>
+    <h1>World Data</h1>
+    <div class="back">
+        <a href = '/'><input type="button" class='button' value="Return to Home"></a>
+    </div>
+</header>
+<body>
+    
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>New Case</th>
+            <th>Recovered</th>
+            <th>Total Confirmed</th>
+            <th>Total Tested</th>
+            <th>Total Deaths</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+            <td>{{row[6]}}</td> 
+            <td>{{row[7]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<fotter>
+    <div class="container">
+        <span class="copyright">Copyright &copy; 2020 - Designed and Coded by Runa Morioka</span>
+    </div>
+</fotter>
+</html>
